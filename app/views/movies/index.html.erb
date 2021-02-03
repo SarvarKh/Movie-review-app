@@ -1,10 +1,13 @@
 <h1>Insparational Movie Review App</h1>
-<p>The list of all movies (<%= @movies.size%> movies):</p>
+<p>The list of all movies (<%= pluralize(@movies.size, 'movie')%>):</p>
 
 <ul>
     <% @movies.each do |movie| %>
         <li><strong><%= movie.name %></strong></li>
         in <%= movie.location %>:
-        <%= number_to_currency(movie.price) %><br><br>
+        <%= format_price(movie) %><br>
+        Description: <%= truncate(movie.description, length: 40, separator: ' ') %><br>
+        Starts_at: <%= movie.start_at.to_s(:long) %>
+        <br><br>
     <% end %>
 </ul>
