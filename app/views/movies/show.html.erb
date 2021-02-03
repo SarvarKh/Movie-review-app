@@ -1,0 +1,12 @@
+<article>
+    <h1>
+        <strong><%= @movie.name %></strong>
+    </h1>
+
+    <ul>
+        <li>Locatoin: <%= @movie.location %></li>
+        <li>Price: <%= format_price(@movie) %></li>
+        <li>Description: <%= @movie.description %><</li>
+        <li>Starts_at: <%= @movie.start_at.to_s(:long) %></li>
+    </ul>
+</article>
