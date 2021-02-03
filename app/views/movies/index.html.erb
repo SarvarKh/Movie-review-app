@@ -3,7 +3,7 @@
 
 <ul>
     <% @movies.each do |movie| %>
-        <li><strong><%= movie.name %></strong></li>
+        <li><strong><%= link_to(movie.name, movie) %></strong></li>
         in <%= movie.location %>:
         <%= format_price(movie) %><br>
         Description: <%= truncate(movie.description, length: 40, separator: ' ') %><br>

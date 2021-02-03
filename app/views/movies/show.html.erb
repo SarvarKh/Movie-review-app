@@ -9,4 +9,6 @@
         <li>Description: <%= @movie.description %><</li>
         <li>Starts_at: <%= @movie.start_at.to_s(:long) %></li>
     </ul>
+
+    <%= link_to 'All movies', movies_path %>
 </article>
