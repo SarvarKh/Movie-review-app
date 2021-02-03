@@ -3,6 +3,8 @@
 
 <ul>
     <% @movies.each do |movie| %>
-        <li><%= movie %></li>
+        <li><strong><%= movie.name %></strong></li>
+        in <%= movie.location %>:
+        <%= number_to_currency(movie.price) %><br><br>
     <% end %>
 </ul>
