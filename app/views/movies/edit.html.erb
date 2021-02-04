@@ -1,0 +1,20 @@
+<h3>Editing <%= @movie.name%> </h3>
+
+<%= form_for(@movie) do |f|%>
+    <p> <%= f.label :name %> </p>
+    <p> <%= f.text_field :name %> </p>
+    
+    <p> <%= f.label :description %> </p>
+    <p> <%= f.text_area :description, cols: 48, rows: 6 %> </p>
+
+    <p> <%= f.label :price %> </p>
+    <p> <%= f.number_field :price %> </p>
+    
+    <p> <%= f.label :location %> </p>
+    <p> <%= f.text_field :location %> </p>
+
+    <p> <%= f.label :start_at %> </p>
+    <p> <%= f.datetime_select :start_at %> </p>
+
+    <p> <%= f.submit %> </p>
+<% end %>
