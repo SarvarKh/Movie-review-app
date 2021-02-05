@@ -1,0 +1,16 @@
+<h1>Insparational Movie Review App</h1>
+
+<%= link_to 'Create new Movie', new_movie_path %>
+
+<p>The list of all movies (<%= pluralize(@movies.size, 'movie')%>):</p>
+
+<ul>
+    <% @movies.each do |movie| %>
+        <li><strong><%= link_to(movie.name, movie) %></strong></li>
+        in <%= movie.location %>:
+        <%= format_price(movie) %><br>
+        Description: <%= truncate(movie.description, length: 40, separator: ' ') %><br>
+        Starts_at: <%= movie.start_at.to_s(:long) %>
+        <br><br>
+    <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<article>
+    <h1>
+        <strong><%= @movie.name %></strong>
+    </h1>
+
+    <ul>
+        <li>Locatoin: <%= @movie.location %></li>
+        <li>Price: <%= format_price(@movie) %></li>
+        <li>Description: <%= @movie.description %><</li>
+        <li>Starts_at: <%= @movie.start_at.to_s(:long) %></li>
+    </ul>
+
+    <%= link_to 'All movies', movies_path %> |
+    <%= link_to 'Edit', edit_movie_path %> |
+    <%= link_to 'Delete', movie_path(@movie), method: :delete, data: {confirm: 'Are you sure?' } %>
+</article>
